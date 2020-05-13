@@ -1,0 +1,15 @@
+{% extends "layout_base.html" %}
+
+
+{% block body %}
+<br/>
+<br/>
+<!--- number links, then once selected download to server.
+       once server download completes allow user download to desktop.
+--->
+<ul>
+    {% for link in data %}
+        <li><a href="{{ link }}">{{ link }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
