@@ -3,7 +3,7 @@
 
 {% block body %}
 <h3 align="center">{{ title }}</h3>
-<ul>
+<ul align="center">
     {% for i, item in streams.items() %}
     <br/>
     <li>{{ i + 1 }}<a href="{{ item.url }}"> resolution : {{ item.resolution }}</a></li>
