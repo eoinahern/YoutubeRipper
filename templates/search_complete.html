@@ -4,12 +4,11 @@
 {% block body %}
 <br/>
 <br/>
-<!--- number links, then once selected download to server.
-       once server download completes allow user download to desktop.
---->
+<h3>{{ title }}</h3>
 <ul>
-    {% for link in data %}
-        <li><a href="{{ link }}">{{ link }}</a></li>
+    {% for key in streams %}
+        <li><a href="link{{ key }}">{{ streams[key].res }}</a></li>
     {% endfor %}
 </ul>
 {% endblock %}
+

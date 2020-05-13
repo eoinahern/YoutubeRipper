@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
+from pytube import YouTube
 
 app = Flask(__name__)
+youtube_url_partial = "https://www.youtube.com/watch?v"
 
 
 @app.route("/", methods=["POST", "GET"])
@@ -9,12 +11,13 @@ def index():
         return render_template("main_page.html")
     else:
         url = request.form.get("url")
-        #fake data!!!
-        data = ["http://www.google.com", "http://www.facebook.com"]
-        return render_template("search_complete.html", data=data)
 
-
-
-
-def authURL(url):
-    pass
+        if youtube_url_partial in url:
+            video = YouTube(url)
+            vid_streams = video.streams.filter(mime_type="video/mp4")
+            print(vid_streams)
+            video_title = video.title
+            dictionary = {i: vid_streams[i] for i in range(0, len(vid_streams))}
+            render_template("search_complete.html", streams=dictionary, title=video_title)
+        else:
+            return render_template("error_loading.html")
