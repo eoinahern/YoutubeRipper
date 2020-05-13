@@ -9,15 +9,18 @@ youtube_url_partial = "https://www.youtube.com/watch?v"
 def index():
     if request.method == "GET":
         return render_template("main_page.html")
-    else:
+    elif request.method == "POST":
         url = request.form.get("url")
 
         if youtube_url_partial in url:
             video = YouTube(url)
             vid_streams = video.streams.filter(mime_type="video/mp4")
-            print(vid_streams)
             video_title = video.title
             dictionary = {i: vid_streams[i] for i in range(0, len(vid_streams))}
-            render_template("search_complete.html", streams=dictionary, title=video_title)
+            return render_template("search_complete.html", streams=dictionary, title=video_title)
         else:
             return render_template("error_loading.html")
+
+
+if __name__ == "__main__":
+    app.run()

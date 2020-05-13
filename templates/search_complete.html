@@ -6,8 +6,8 @@
 <br/>
 <h3>{{ title }}</h3>
 <ul>
-    {% for key in streams %}
-        <li><a href="link{{ key }}">{{ streams[key].res }}</a></li>
+    {% for i, item in streams.items() %}
+        <li>{{ i }}<a href="">{{ item.res }}</a></li>
     {% endfor %}
 </ul>
 {% endblock %}
