@@ -7,7 +7,9 @@
 <h3>{{ title }}</h3>
 <ul>
     {% for i, item in streams.items() %}
-        <li>{{ i }}<a href="">{{ item.res }}</a></li>
+    <br/>
+    <li>{{ i + 1 }}<a href="{{ item.url }}"> resolution : {{ item.resolution }}</a></li>
+    <br/>
     {% endfor %}
 </ul>
 {% endblock %}
