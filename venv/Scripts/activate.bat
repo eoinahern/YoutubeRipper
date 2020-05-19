@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\eoin_a\PycharmProjects\youtube_ripper\venv
+set VIRTUAL_ENV=C:\Users\wojte\Dropbox\My PC (LAPTOP-23SPQ06O)\Desktop\Gitrepos\YoutubeRipper\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

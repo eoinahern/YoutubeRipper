@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\eoin_a\PycharmProjects\youtube_ripper\venv"
+VIRTUAL_ENV="C:\Users\wojte\Dropbox\My PC (LAPTOP-23SPQ06O)\Desktop\Gitrepos\YoutubeRipper\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
